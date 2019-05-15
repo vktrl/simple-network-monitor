@@ -17,7 +17,7 @@ def current_time():
 def write(message):
     with open("log.txt", "a") as log:
         log.write(message + "\n")
-        print(message)
+    print(message)
 def ping():
     response = os.system("ping -c 1 -W 1 " + host + " 1> /dev/null 2> /dev/null")
     return response
@@ -31,6 +31,7 @@ def time_difference(start, end):
 
 signal.signal(signal.SIGINT, signal_handler)
 
+write(separator)
 write("Host: "+ host + "\nStarted\t" + current_time())
 write(separator)
 
